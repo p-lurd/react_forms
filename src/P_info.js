@@ -10,7 +10,7 @@ const Personal_info = () => {
 
       <div className="mt-5">
         <label htmlFor="email" className="mb-1 block text-sm text-blue-900">Email Address</label>
-        <input type="email" id="email" className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="e.g. stephenking@lorem.com" />
+        <input type="email" id="email" className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="e.g. stephenking@lorem.com focus:" />
       </div>
 
       <div className="mt-5 mb-5">
