@@ -1,17 +1,23 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import arcade from "./assets/arcade.svg";
 import advanced from "./assets/advanced.svg";
 import pro from "./assets/pro.svg";
 
-const Plan = () => {
-    const handleToggle = (event) => {
-        if (event.target.checked) {
-          setOptionPlan("monthly");
-        } else {
-          setOptionPlan("yearly");
-        }
-      };
+const Plan = ({handlePlanFormSubmit}) => {
   const [optionPlan, setOptionPlan] = useState("yearly");
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+
+
+
+  const handleToggle = (event) => {
+    if (event.target.checked) {
+      setOptionPlan("monthly");
+    } else {
+      setOptionPlan("yearly");
+    }
+  };
+
   const plans = {
     Arcade: {
       monthly: 9,
@@ -26,7 +32,15 @@ const Plan = () => {
       yearly: 150,
     },
   };
-  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const finalFormValues = {
+    optionPlan,
+    selectedPlan,
+  };
+
+  useEffect(()=>{handlePlanFormSubmit(finalFormValues)},[finalFormValues])
+
+
   return (
     <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg">
       <h1 className="mt-4 mb-2 text-2xl text-blue-900 font-semibold font-mono">
@@ -103,16 +117,22 @@ const Plan = () => {
         </div>
 
         <div className="w-full flex justify-center mt-10 mb-3">
-        <label class="inline-flex w-4/5 items-center cursor-pointer justify-center bg-slate-100 p-3 rounded-xl">
-        <span class=" text-sm mr-3 font-medium text-blue-900 dark:text-gray-500">
-            Yearly
-          </span>
-          <input type="checkbox" value="" class="sr-only peer" enabled onChange={handleToggle}/>
-          <div class="relative w-11 h-6 bg-blue-600 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-          <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-500">
-            Monthly
-          </span>
-        </label>
+          <label class="inline-flex w-4/5 items-center cursor-pointer justify-center bg-slate-100 p-3 rounded-xl">
+            <span class=" text-sm mr-3 font-medium text-blue-900 dark:text-gray-500">
+              Yearly
+            </span>
+            <input
+              type="checkbox"
+              value=""
+              class="sr-only peer"
+              enabled
+              onChange={handleToggle}
+            />
+            <div class="relative w-11 h-6 bg-blue-600 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-500">
+              Monthly
+            </span>
+          </label>
         </div>
       </div>
     </div>
