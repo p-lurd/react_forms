@@ -16,9 +16,9 @@ const Header = () => {
   const circle1 = location.pathname === '/' || location.pathname === '/personal_info' ? '#93c5fd' : 'none';
   const circle2 = location.pathname === '/plan' ? '#93c5fd' : 'none';
   const circle3 = location.pathname === '/addon' ? '#93c5fd' : 'none';
-  const circle4 = location.pathname === '/finish' ? '#93c5fd' : 'none';
+  const circle4 = location.pathname === '/summary' ? '#93c5fd' : 'none';
   return (
-    <header className="grid  w-full h-1/4 relative overflow-hidden shadow-inner bg-gradient-to-r from-blue-800 to-cyan-800 hover:bg-gradient-to-l">
+    <header className="grid  md:hidden w-full h-1/4 relative overflow-hidden shadow-inner bg-gradient-to-r from-blue-800 to-cyan-800 hover:bg-gradient-to-l">
       <div className='flex items-center justify-center z-50 w-full mb-10 pr-10'>
         <svg width="70" height="100" >
         <circle r="15" cx="50" cy="50" fill={circle1} stroke="#93c5fd" stroke-width="1.5"></circle>

@@ -1,22 +1,44 @@
 import { useEffect, useState } from "react";
+import { useFormContext } from './formContext';
+import Sidebar from "./Sidebar";
+import Navigator from "./NavigatorMd.js";
 
 const AddOn = ({ handleAddonFormSubmit }) => {
-  const [customizableProfile, setCustomizableProfile] = useState(false);
-  const [largerStorage, setLargerStorage] = useState(false);
-  const [onlineService, setOnlineService] = useState(false);
+    const {customizableProfile, setCustomizableProfile, largerStorage, setLargerStorage, onlineService, setOnlineService}=useFormContext();
+//   const [customizableProfile, setCustomizableProfile] = useState(false);
+//   const [largerStorage, setLargerStorage] = useState(false);
+//   const [onlineService, setOnlineService] = useState(false);
 
-  const [formValues, setFormValues] = useState({
-    customizableProfile: "",
-    largerStorage: "",
-    onlineService: "",
-  });
+//   const [formValues, setFormValues] = useState({
+//     customizableProfile: "",
+//     largerStorage: "",
+//     onlineService: "",
+//   });
+
+    //.......................this should be on clicking of summarize
+    const pricing = {
+        onlineService: 1,
+        largerStorage: 2,
+        customizableProfile: 2
+    }
+    const Total = ([customizableProfile, largerStorage, onlineService])=>{
+        let val = 0
+        this.array.forEach(element => {
+            if(element){
+                let val = val + pricing.element
+            }
+            return val
+        });
+    }
 
   const handleCheckboxChange = (event, setter) => {
     setter(event.target.checked);
   };
 
   return (
-    <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg">
+    <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2">
+        <Sidebar></Sidebar>
+        <div className="md:m-3">
       <h1 className="mt-4 mb-2 text-2xl text-blue-900 font-semibold font-mono">
         Pick add-ons
       </h1>
@@ -28,7 +50,7 @@ const AddOn = ({ handleAddonFormSubmit }) => {
           className={`flex justify-between items-center border p-3 rounded-md  mt-5 ${
             onlineService === true
               ? "border-blue-900 shadow-md bg-blue-50"
-              : "border-gray-300"
+              : "border-gray-100"
           }`}
         >
           <div className="inline-flex items-center">
@@ -55,7 +77,7 @@ const AddOn = ({ handleAddonFormSubmit }) => {
           className={`flex justify-between items-center border p-3 rounded-md mt-5  ${
             largerStorage === true
               ? "border-blue-900 shadow-md bg-blue-50"
-              : "border-gray-300"
+              : "border-gray-100"
           }`}
         >
           <div className="inline-flex items-center">
@@ -107,6 +129,9 @@ const AddOn = ({ handleAddonFormSubmit }) => {
           <p className="text-sm text-blue-900">+$2/mo</p>
         </label>
       </form>
+      <Navigator></Navigator>
+      </div>
+
     </div>
   );
 };
