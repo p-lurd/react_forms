@@ -1,6 +1,9 @@
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
+import { useFormContext } from "./formContext";
 const Summary = () => {
+  const { optionPlan, setOptionPlan, selectedPlan, setSelectedPlan } =
+    useFormContext();
   return (
     <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2 text-gray-400">
       <Sidebar></Sidebar>
@@ -16,7 +19,7 @@ const Summary = () => {
       <div className="bg-slate-50 rounded-lg mb-5 px-3">
         <div className="flex justify-between p-5 pb-4">
           <div>
-            <h2 className="text-blue-900 font-bold">Arcade(monthly)</h2>
+            <h2 className="text-blue-900 font-bold">{selectedPlan}({optionPlan})</h2>
             <a href="" className="underline">
               Change
             </a>
