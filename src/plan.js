@@ -6,10 +6,12 @@ import Sidebar from "./Sidebar";
 import Navigator from "./NavigatorMd.js";
 
 const Plan = () => {
-  const { optionPlan, setOptionPlan, selectedPlan, setSelectedPlan } =
+  
+  const { optionPlan, setOptionPlan, selectedPlan, setSelectedPlan, name, email } =
     useFormContext();
   // const [optionPlan, setOptionPlan] = useState("yearly");
   // const [selectedPlan, setSelectedPlan] = useState(null);
+  console.log(name, email)
 
   const handleToggle = (event) => {
     if (event.target.checked) {

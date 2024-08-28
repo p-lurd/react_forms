@@ -11,6 +11,9 @@ export const FormProvider = ({ children }) => {
   const [customizableProfile, setCustomizableProfile] = useState(false);
   const [largerStorage, setLargerStorage] = useState(false);
   const [onlineService, setOnlineService] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState();
 
   const value = {
     optionPlan,
@@ -23,6 +26,12 @@ export const FormProvider = ({ children }) => {
     setLargerStorage,
     onlineService,
     setOnlineService,
+    name,
+    setName,
+    email,
+    setEmail,
+    phone,
+    setPhone,
   };
 
   return (

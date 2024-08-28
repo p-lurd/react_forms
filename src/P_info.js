@@ -1,7 +1,18 @@
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
+import { useFormContext } from "./formContext";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+  Link,
+  useHistory,
+} from "react-router-dom";
 
 const Personal_info = () => {
+  const { name, setName, phone, setPhone, email, setEmail } = useFormContext();
+  
   return (
     <form
       action=""
@@ -20,6 +31,9 @@ const Personal_info = () => {
             Name
           </label>
           <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
             type="text"
             id="name"
             className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -32,6 +46,8 @@ const Personal_info = () => {
             Email Address
           </label>
           <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
             type="email"
             id="email"
             className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -44,13 +60,15 @@ const Personal_info = () => {
             Phone Number
           </label>
           <input
+          value={phone}
+          onChange={(e)=> setPhone(e.target.value)}
             type="tel"
             id="phone"
             className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             placeholder="e.g. +1 234 567890"
           />
         </div>
-        <Navigator></Navigator>
+        <Navigator/>
       </div>
     </form>
   );
