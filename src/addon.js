@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useFormContext } from './formContext';
 import Sidebar from "./Sidebar";
 import Navigator from "./NavigatorMd.js";
+import {motion} from "framer-motion"
 
 const AddOn = ({ handleAddonFormSubmit }) => {
     const {customizableProfile, setCustomizableProfile, largerStorage, setLargerStorage, onlineService, setOnlineService}=useFormContext();
@@ -36,7 +37,12 @@ const AddOn = ({ handleAddonFormSubmit }) => {
   };
 
   return (
-    <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2">
+    <motion.div
+     className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2"
+     initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+     >
         <Sidebar></Sidebar>
         <div className="md:m-3">
       <h1 className="mt-4 mb-2 text-2xl text-blue-900 font-semibold font-mono">
@@ -47,7 +53,7 @@ const AddOn = ({ handleAddonFormSubmit }) => {
       </p>
       <form action="">
         <label
-          className={`flex justify-between items-center border p-3 rounded-md  mt-5 ${
+          className={`flex justify-between items-center border p-3 rounded-md hover:bg-blue-50  mt-5 ${
             onlineService === true
               ? "border-blue-900 shadow-md bg-blue-50"
               : "border-gray-100"
@@ -74,7 +80,7 @@ const AddOn = ({ handleAddonFormSubmit }) => {
         </label>
 
         <label
-          className={`flex justify-between items-center border p-3 rounded-md mt-5  ${
+          className={`flex justify-between items-center border p-3 rounded-md hover:bg-blue-50 mt-5  ${
             largerStorage === true
               ? "border-blue-900 shadow-md bg-blue-50"
               : "border-gray-100"
@@ -101,7 +107,7 @@ const AddOn = ({ handleAddonFormSubmit }) => {
         </label>
 
         <label
-          className={`flex justify-between items-center border p-3 rounded-md mt-5 ${
+          className={`flex justify-between items-center border p-3 rounded-md hover:bg-blue-50 mt-5 ${
             customizableProfile === true
               ? "border-blue-900 shadow-md bg-blue-50"
               : "border-gray-100"
@@ -132,7 +138,7 @@ const AddOn = ({ handleAddonFormSubmit }) => {
       <Navigator></Navigator>
       </div>
 
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,11 +1,17 @@
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
 import { useFormContext } from "./formContext";
+import { motion } from "framer-motion";
 const Summary = () => {
   const { optionPlan, setOptionPlan, selectedPlan, setSelectedPlan } =
     useFormContext();
   return (
-    <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2 text-gray-400">
+    <motion.div
+     className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2 text-gray-400"
+     initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+     >
       <Sidebar></Sidebar>
       <div className="md:mx-10">
       <div className="md:m-3">
@@ -44,7 +50,7 @@ const Summary = () => {
       </div>
       <Navigator></Navigator>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

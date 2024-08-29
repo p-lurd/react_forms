@@ -9,14 +9,18 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const Personal_info = () => {
   const { name, setName, phone, setPhone, email, setEmail } = useFormContext();
   
   return (
-    <form
+    <motion.form
       action=""
       className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <Sidebar></Sidebar>
       <div className="md:m-3">
@@ -70,7 +74,7 @@ const Personal_info = () => {
         </div>
         <Navigator/>
       </div>
-    </form>
+    </motion.form>
   );
 };
 

@@ -4,6 +4,7 @@ import pro from "./assets/pro.svg";
 import { useFormContext } from "./formContext";
 import Sidebar from "./Sidebar";
 import Navigator from "./NavigatorMd.js";
+import{motion} from "framer-motion"
 
 const Plan = () => {
   
@@ -45,7 +46,12 @@ const Plan = () => {
   // useEffect(()=>{handlePlanFormSubmit(finalFormValues)},[finalFormValues])
 
   return (
-    <div className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2">
+    <motion.div
+     className="absolute bg-white rounded-lg top-32 p-5 mx-4 shadow-lg md:flex md:p-2"
+     initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+     >
       <Sidebar></Sidebar>
       <div className="md:mx-5">
         <div>
@@ -146,7 +152,7 @@ const Plan = () => {
         <Navigator></Navigator>
       </div>
       
-    </div>
+    </motion.div>
   );
 };
 
