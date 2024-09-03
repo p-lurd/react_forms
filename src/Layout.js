@@ -9,8 +9,8 @@ import {
 import Header from "./header.js";
 import Personal_info from "./P_info.js";
 import Footer from "./footer.js";
-import Plan from "./Plan.js";
-import AddOn from "./Addon.js";
+import Plan from "./plan.js";
+import AddOn from "./addon.js";
 import { FormProvider } from "./formContext.js";
 import Summary from "./Summary.js";
 const Layout = () => {
