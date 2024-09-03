@@ -8,7 +8,7 @@ import {
   } from "react-router-dom";
 import Header from "./header.js";
 import Personal_info from "./P_info.js";
-import Footer from "./Footer.js";
+import Footer from "./footer.js";
 import Plan from "./Plan.js";
 import AddOn from "./Addon.js";
 import { FormProvider } from "./formContext.js";
