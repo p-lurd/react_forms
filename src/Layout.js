@@ -6,7 +6,7 @@ import {
     Link,
     Navigate
   } from "react-router-dom";
-import Header from "./Header.js";
+import Header from "./header.js";
 import Personal_info from "./P_info.js";
 import Footer from "./Footer.js";
 import Plan from "./Plan.js";
