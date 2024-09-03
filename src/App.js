@@ -8,7 +8,7 @@ import {
   useHistory,
 } from "react-router-dom";
 import Layout from "./Layout";
-import { FormProvider } from "./formContext";
+import { FormProvider } from "./FormContext";
 
 function App() {
   // const location = useLocation();

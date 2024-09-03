@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
-import { useFormContext } from "./formContext";
+import { useFormContext } from "./FormContext.js";
 import { motion } from "framer-motion";
 const Summary = () => {
   const { optionPlan, setOptionPlan, selectedPlan, setSelectedPlan } =
@@ -41,7 +41,7 @@ const Summary = () => {
         <div className="flex justify-between p-5 pb-5">
           <h2>Larger storage</h2>
 
-          <p className="text-blue-950">$9/mo</p>
+          <p className="text-blue-950">$5/mo</p>
         </div>
       </div>
       <div className="flex justify-between p-5">

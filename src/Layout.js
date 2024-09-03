@@ -6,12 +6,12 @@ import {
     Link,
     Navigate
   } from "react-router-dom";
-import Header from "./header.js";
+import Header from "./Header.js";
 import Personal_info from "./P_info.js";
-import Footer from "./footer.js";
-import Plan from "./plan.js";
-import AddOn from "./addon.js";
-import { FormProvider } from "./formContext";
+import Footer from "./Footer.js";
+import Plan from "./Plan.js";
+import AddOn from "./Addon.js";
+import { FormProvider } from "./FormContext.js";
 import Summary from "./Summary.js";
 const Layout = () => {
   const location = useLocation();
@@ -39,15 +39,12 @@ const Layout = () => {
 
       <Routes>
       <Route path="/" element={<Navigate to="/personal_info" />} />
-      {/* <Route index element={<Personal_info />} /> */}
         <Route path="/personal_info" element={<Personal_info />} />
         <Route path="/plan" element={<Plan />} />
         <Route path="/addon" element={<AddOn />} />
         <Route path="/summary" element={<Summary />} />
-        {/* <Route path="/" element={<Personal_info />} /> */}
       </Routes>
 
-      {/* <Footer next={next} prev={prev} /> */}
     </div>
   );
 };

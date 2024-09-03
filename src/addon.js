@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useFormContext } from './formContext';
-import Sidebar from "./Sidebar";
+import { useFormContext } from './FormContext.js';
+import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
 import {motion} from "framer-motion"
 
