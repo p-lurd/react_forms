@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
-import { useFormContext } from "./FormContext.js";
+import { useFormContext } from "./formContext.js";
 import { motion } from "framer-motion";
 const Summary = () => {
   const { optionPlan, setOptionPlan, selectedPlan, setSelectedPlan } =

@@ -1,7 +1,7 @@
 import arcade from "./assets/arcade.svg";
 import advanced from "./assets/advanced.svg";
 import pro from "./assets/pro.svg";
-import { useFormContext } from "./FormContext.js";
+import { useFormContext } from "./formContext.js";
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
 import{motion} from "framer-motion"

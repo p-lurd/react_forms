@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useFormContext } from './FormContext.js';
+import { useFormContext } from './formContext.js';
 import Sidebar from "./Sidebar.js";
 import Navigator from "./NavigatorMd.js";
 import {motion} from "framer-motion"

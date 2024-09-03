@@ -11,7 +11,7 @@ import Personal_info from "./P_info.js";
 import Footer from "./Footer.js";
 import Plan from "./Plan.js";
 import AddOn from "./Addon.js";
-import { FormProvider } from "./FormContext.js";
+import { FormProvider } from "./formContext.js";
 import Summary from "./Summary.js";
 const Layout = () => {
   const location = useLocation();
